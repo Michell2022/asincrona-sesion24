@@ -1,0 +1,37 @@
+<div class="h-screen mx-auto text-white flex items-center md:w-5/6 lg:w-9/12 xl:w-2/3">
+    <div class="mx-auto w-4/5 h-4/5 bg-[#282c34] shadow-[0_0_20px_0px_rgba(0,0,0,0.5)] rounded-2xl md: md:w-1/2  md:rounded-r-none">
+        <div class="w-4/5 mx-auto rounded py-8 px-4">
+            <h1 class="text-4xl text-center mb-7">Login</h1>
+            <form [formGroup]="formLogin">
+                <div>
+                    <div>
+                        <label for="email">Correo</label>
+                    </div>
+                    <div class="mb-10 mt-2">
+                        <input class="border py-2 px-2 rounded w-full text-black" type="text" id="email"
+                            placeholder="michell@gmail.com" formControlName="email">
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <label for="password">Password</label>
+                    </div>
+                    <div class="mb-10 mt-2">
+                        <input class="border py-2 px-2 rounded w-full text-black" type="password" id="password"
+                            placeholder="123456" formControlName="password">
+                    </div>
+                </div>
+                <div>
+                    <button class="bg-[#4c7cff] text-white font-bold py-2 px-10 rounded duration-300 hover:bg-[#0159e8]"
+                        (click)="onSubmit()">Login</button>
+                        <div class="mt-4">
+                            <span class="text-sm">¿No tienes una cuenta? <span class="text-orange-500 cursor-pointer text-[16px]" (click)="registrarse()">Registrate</span></span>
+                        </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div
+        class="fondito w-4/5 hidden rounded-2xl shadow-[0_0_20px_0px_rgba(0,0,0,0.5)] md:block md:rounded-l-none w-1/2 h-4/5">
+    </div>
+</div>
