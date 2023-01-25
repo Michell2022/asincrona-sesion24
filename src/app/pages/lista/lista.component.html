@@ -1,1 +1,22 @@
 <p>lista works!</p>
+
+<table class="table-auto border-collapse border border-slate-400 w-4/6 mx-auto text-center">
+  <thead class="bg-black text-white text-lg">
+    <tr>
+      <th class="border border-slate-300 py-3">Nombre</th>
+      <th class="border border-slate-300 py-3">Precio</th>
+      <th class="border border-slate-300 py-3">Imagen</th>
+      <th class="border border-slate-300 py-3">Tools</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let prod of farmacia" class="group/item hover:bg-blue-100">
+      <td class="border border-slate-300">{{prod.producto}}</td>
+      <td class="border border-slate-300">{{prod.costo}}</td>
+      <td class="border border-slate-300"><img class="mx-auto my-1" src="{{prod.foto}}" alt="" width="100"></td>
+      <td class="border border-slate-300">
+        <button class="bg-red-500 tex-white px-4 py-2 rounded-xl text-white" (click)="onClickDelete(prod)">Elilminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
