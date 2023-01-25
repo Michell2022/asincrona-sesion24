@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { collectionData, Firestore } from '@angular/fire/firestore';
-import { addDoc, collection } from 'firebase/firestore';
+import { addDoc, collection, deleteDoc, doc } from 'firebase/firestore';
 import { Observable } from 'rxjs';
 import { Farmacia } from '../interfaces/interface';
 
@@ -26,5 +26,11 @@ export class FarmaciaSerService {
     const farmaciaRef = collection(this.firestore, 'farmacia');
     //TRAIGO LA collectionData DE LA referenciaRef Y LAS ORDENO POR EL CAMPO id POR MEDIO DE UN ARREGLO.
     return collectionData(farmaciaRef, {idField:'id'}) as Observable<Farmacia[]>
+  }
+
+  //ELIMINAR EL doc DE ESTA BASE DE DATOS CON EL id.
+  deleteFarmacia(farmacia:Farmacia){
+    const farmaciaRef = doc(this.firestore, `farmacia/${farmacia.id}`)
+    return deleteDoc(farmaciaRef);
   }
 }

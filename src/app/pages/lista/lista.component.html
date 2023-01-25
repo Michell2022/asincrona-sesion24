@@ -1,5 +1,7 @@
-<p>lista works!</p>
 
+<div class="w-4/6 mx-auto my-4">
+  <button class="bg-green-500 duration-300 tex-white px-8 py-2 rounded-xl text-white hover:bg-green-600" (click)="onClickNuevo()">Registrar producto nuevo</button>
+</div>
 <table class="table-auto border-collapse border border-slate-400 w-4/6 mx-auto text-center">
   <thead class="bg-black text-white text-lg">
     <tr>
@@ -12,10 +14,10 @@
   <tbody>
     <tr *ngFor="let prod of farmacia" class="group/item hover:bg-blue-100">
       <td class="border border-slate-300">{{prod.producto}}</td>
-      <td class="border border-slate-300">{{prod.costo}}</td>
+      <td class="border border-slate-300">S/. {{prod.costo}}</td>
       <td class="border border-slate-300"><img class="mx-auto my-1" src="{{prod.foto}}" alt="" width="100"></td>
       <td class="border border-slate-300">
-        <button class="bg-red-500 tex-white px-4 py-2 rounded-xl text-white" (click)="onClickDelete(prod)">Elilminar</button>
+        <button class="bg-red-500 duration-300 tex-white px-4 py-2 rounded-xl text-white hover:bg-red-700" (click)="onClickDelete(prod)">Eliminar</button>
       </td>
     </tr>
   </tbody>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Farmacia } from 'src/app/interfaces/interface';
 import { FarmaciaSerService } from 'src/app/services/farmacia-ser.service';
 
@@ -11,7 +12,8 @@ export class ListaComponent implements OnInit{
 
   farmacia!:Farmacia[];
 
-  constructor(private farmaService: FarmaciaSerService){ }
+  //INYECTO MI SERVICIOS Y ROUTER.
+  constructor(private farmaService: FarmaciaSerService, private router:Router){ }
 
 
   ngOnInit(): void {
@@ -20,9 +22,14 @@ export class ListaComponent implements OnInit{
     })
   }
 
-
+// CREO MI FUNCION ELIMINAR PRODUCTO.
   onClickDelete(farmacia:Farmacia){
-
+    const response = this.farmaService.deleteFarmacia(farmacia)
+    console.log(response);
   }
 
+  // CREO MI FUNCION REGISTRAR PRODUCTO NUEVO.
+  onClickNuevo(){
+    this.router.navigate(['/registro'])
+  }
 }
